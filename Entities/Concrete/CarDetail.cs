@@ -7,9 +7,10 @@ using System.Threading.Tasks;
 
 namespace Entities.Concrete
 {
-	public class Model:IEntity
+	public class CarDetail:IEntity
 	{
-        public int ModelId { get; set; }
-        public string ModelName { get; set; }
+        public int DetailId { get; set; }
+        public string Description { get; set; }
+        public string Plates { get; set; } // Plaka
     }
 }

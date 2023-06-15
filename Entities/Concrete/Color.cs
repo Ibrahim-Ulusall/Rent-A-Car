@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace Entities.Concrete
 {
-	public class Model:IEntity
+	public class Color:IEntity
 	{
-        public int ModelId { get; set; }
-        public string ModelName { get; set; }
+        public int ColorId { get; set; }
+        public string ColorName { get; set; }
     }
 }

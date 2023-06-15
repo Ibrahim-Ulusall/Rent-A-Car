@@ -7,9 +7,10 @@ using System.Threading.Tasks;
 
 namespace Entities.Concrete
 {
-	public class Model:IEntity
+	public class RateOfEngine:IEntity
 	{
-        public int ModelId { get; set; }
-        public string ModelName { get; set; }
+        public int EngineId { get; set; }
+        public decimal RateofEngine { get; set; }
+
     }
 }
