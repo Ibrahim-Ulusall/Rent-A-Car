@@ -16,7 +16,7 @@ namespace Entities.Concrete
         public string ChassisNumber { get; set; } // Şasi No
         public string Descriptions { get; set; }
         public string Plate { get; set; } // Plaka
-        public string imagePath { get; set; }
+        public string ImagePath { get; set; }
 
     }
 }
