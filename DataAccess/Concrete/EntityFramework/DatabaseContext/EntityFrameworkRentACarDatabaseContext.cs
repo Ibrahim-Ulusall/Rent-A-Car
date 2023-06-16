@@ -14,7 +14,14 @@ namespace DataAccess.Concrete.EntityFramework.DatabaseContext
 		{
 			optionsBuilder.UseSqlServer(@"Server=(localdb)\MSSQLLocalDB;Database=RentalDatabase;Trusted_Connection=true;");
 		}
-		
+
+		protected override void OnModelCreating(ModelBuilder modelBuilder)
+		{
+			modelBuilder.Entity<RateOfEngine>().HasNoKey();
+			modelBuilder.Entity<Vehicle>().HasNoKey();
+
+			// Other configurations for your entities
+		}
 
 		public DbSet<Vehicle> Vehicles { get; set; }
 		public DbSet<Model> Models { get; set; }

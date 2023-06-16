@@ -1,5 +1,6 @@
 ﻿using Core.Business;
 using Entities.Concrete;
+using Entities.DTOs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,6 +11,6 @@ namespace Business.Abstract
 {
 	public interface IVehicleService:IBusinessRepository<Vehicle>
 	{
-
+		List<CarDetailDto> GetDetails();
 	}
 }

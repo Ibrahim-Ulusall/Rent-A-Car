@@ -1,6 +1,7 @@
 ﻿using Business.Abstract;
 using DataAccess.Abstract;
 using Entities.Concrete;
+using Entities.DTOs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,6 +21,11 @@ namespace Business.Concrete
 		public List<Vehicle> GetAll()
 		{
 			return _vehicleDal.GetAll();
+		}
+
+		public List<CarDetailDto> GetDetails()
+		{
+			return _vehicleDal.GetCarDetails();
 		}
 	}
 }

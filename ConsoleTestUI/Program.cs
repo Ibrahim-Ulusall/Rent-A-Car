@@ -1,9 +1,8 @@
 ﻿using Business.Concrete;
 using DataAccess.Concrete.EntityFramework;
 
-ModelServiceManager serviceManager = new ModelServiceManager(new EfModelDal());
-
-foreach (var item in serviceManager.GetAll())
+VehicleServiceManager serviceManager = new VehicleServiceManager(new EfVehicleDal());
+foreach (var item in serviceManager.GetDetails())
 {
-    Console.WriteLine(item.ModelName);
+    Console.WriteLine("{0}\t{1}\t{2}\t{3}",item.DetailId,item.BrandName,item.ModelName,item.ColorName);
 }
