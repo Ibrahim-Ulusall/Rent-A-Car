@@ -1,4 +1,5 @@
 ﻿using Core.Business;
+using Core.Utilities.Results;
 using Entities.Concrete;
 using Entities.DTOs;
 using System;
@@ -11,6 +12,7 @@ namespace Business.Abstract
 {
 	public interface IVehicleService:IBusinessRepository<Vehicle>
 	{
-		List<CarDetailDto> GetDetails();
+		IDataResult<List<CarDetailDto>> GetDetails();
+		
 	}
 }
