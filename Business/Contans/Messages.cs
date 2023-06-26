@@ -20,6 +20,8 @@ namespace Business.Contans
 		public static string ColorListed = "Renkler Listelendi!";
 		public static string ColorAdded = "Renk Eklendi";
 		public static string ColorDeleted = "Renk Silindi";
+		public static string ColorUpdated = "Renk Güncellendi!";
 		public static string GivenValueCurrentError = "Verilen Renk Sistemde Mevcut";
+		public static string CurrentValueInSystemError = "Güncellenmek istenen değer sistemde mevcut";
 	}
 }
