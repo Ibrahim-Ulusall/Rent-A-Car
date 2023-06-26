@@ -15,6 +15,6 @@ namespace Core.Business
 		IResult Update(T entity);
 		IDataResult<T> Get(T entity);
 		IDataResult<List<T>> GetAll();
-		IDataResult<List<T>> GetByCategoryId();
+		IDataResult<List<T>> GetByCategoryId(int id);
 	}
 }

@@ -32,22 +32,29 @@ namespace Business.Concrete
 
 		public IResult Delete(Vehicle entity)
 		{
-			throw new NotImplementedException();
+			_vehicleDal.Delete(entity);
+			return new SuccessResult(Messages.CarDeleted);
 		}
 
 		public IDataResult<Vehicle> Get(Vehicle entity)
 		{
-			throw new NotImplementedException();
+			if (entity.CarId < 0)
+				return new ErrorDataResult<Vehicle>(Messages.IdValueLessthanZeroError);
+			_vehicleDal.Get(car => car.CarId == entity.CarId);
+			return new SuccessDataResult<Vehicle>();
 		}
 
 		public IDataResult<List<Vehicle>> GetAll()
 		{
-			throw new NotImplementedException();
+			return new SuccessDataResult<List<Vehicle>>(_vehicleDal.GetAll(), Messages.CarListed);
 		}
 
-		public IDataResult<List<Vehicle>> GetByCategoryId()
+		public IDataResult<List<Vehicle>> GetByCategoryId(int id)
 		{
-			throw new NotImplementedException();
+			if (id<0)
+				return new ErrorDataResult<List<Vehicle>>(Messages.IdValueLessthanZeroError);
+			_vehicleDal.GetAll(car => car.CategoryId == id);
+			return new SuccessDataResult<List<Vehicle>>(Messages.CategoriesListed);
 		}
 
 		public IDataResult<List<CarDetailDto>> GetDetails()

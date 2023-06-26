@@ -13,5 +13,8 @@ namespace Business.Contans
 		public static string UnabletoAddVehicle = "Araç Eklenemedi!";
 		public static string NoVehiclestoList = "Listelenecek Araç Yok";
 		public static string IdValueLessthanZeroError = "Id Değeri Sıfırdan Küçük Olamaz!";
+		public static string CarListed = "Araçlar Listelendi!";
+		public static string CarDeleted = "Araç Silindi!";
+		public static string CategoriesListed = "Kategoriler Listelendi!";
 	}
 }
