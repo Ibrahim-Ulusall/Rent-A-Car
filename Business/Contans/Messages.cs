@@ -16,5 +16,10 @@ namespace Business.Contans
 		public static string CarListed = "Araçlar Listelendi!";
 		public static string CarDeleted = "Araç Silindi!";
 		public static string CategoriesListed = "Kategoriler Listelendi!";
+		public static string CarUpdated = "Araç Güncellendi!";
+		public static string ColorListed = "Renkler Listelendi!";
+		public static string ColorAdded = "Renk Eklendi";
+		public static string ColorDeleted = "Renk Silindi";
+		public static string GivenValueCurrentError = "Verilen Renk Sistemde Mevcut";
 	}
 }

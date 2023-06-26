@@ -57,14 +57,12 @@ namespace Business.Concrete
 			return new SuccessDataResult<List<Vehicle>>(Messages.CategoriesListed);
 		}
 
-		public IDataResult<List<CarDetailDto>> GetDetails()
-		{
-			throw new NotImplementedException();
-		}
-
 		public IResult Update(Vehicle entity)
 		{
-			throw new NotImplementedException();
+			if (entity.CarId < 0)
+				return new ErrorResult(Messages.IdValueLessthanZeroError);
+			return new SuccessResult(Messages.CarUpdated);
+
 		}
 	}
 }
