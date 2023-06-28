@@ -8,11 +8,18 @@ VehicleServiceManager serviceManager = new VehicleServiceManager(new EfVehicleDa
 //	Console.WriteLine(item.CategoryId);
 //}
 
-var result = serviceManager.Add(new Vehicle { CarId = -1, BrandId = 1, CarDetailId = 1, CategoryId = 1, 
-	ColorId = 1, ModelId = 1, RateOfEngineId = 1 });
+//var result = serviceManager.Add(new Vehicle { CarId = -1, BrandId = 1, CarDetailId = 1, CategoryId = 1, 
+//	ColorId = 1, ModelId = 1, RateOfEngineId = 1 });
 
-BrandServiceManager brandService = new BrandServiceManager(new EfBrandDal());
-foreach (var item in brandService.GetAll().Data)
-	Console.WriteLine(item.BrandName);
+//BrandServiceManager brandService = new BrandServiceManager(new EfBrandDal());
+//foreach (var item in brandService.GetAll().Data)
+//	Console.WriteLine(item.BrandName);
 
 //Console.WriteLine(result.Message);
+
+CityServiceManager cityService = new CityServiceManager(new EfCityDal());
+foreach (var item in cityService.GetAll().Data)
+{
+    Console.WriteLine(item.CityId.ToString() + " " + item.CityName);
+}
+Console.Read();
