@@ -17,9 +17,11 @@ VehicleServiceManager serviceManager = new VehicleServiceManager(new EfVehicleDa
 
 //Console.WriteLine(result.Message);
 
-CityServiceManager cityService = new CityServiceManager(new EfCityDal());
-foreach (var item in cityService.GetAll().Data)
-{
-    Console.WriteLine(item.CityId.ToString() + " " + item.CityName);
-}
-Console.Read();
+//CityServiceManager cityService = new CityServiceManager(new EfCityDal());
+//string message = cityService.Add(new City { }).Message;
+//Console.WriteLine(message);
+//foreach (var item in cityService.GetAll().Data)
+//{
+//    Console.WriteLine(item.CityId.ToString() + " " + item.CityName);
+//}
+//Console.Read();
