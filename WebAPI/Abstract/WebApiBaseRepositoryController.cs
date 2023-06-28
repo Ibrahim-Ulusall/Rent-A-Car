@@ -19,7 +19,7 @@ namespace WebAPI.Abstract
 			_entityService = entityService;    
         }
 
-		[HttpGet("add")]
+		[HttpPost("add")]
         public virtual IActionResult Add(TEntity entity)
 		{
 			var result = _entityService.Add(entity);
@@ -28,19 +28,29 @@ namespace WebAPI.Abstract
 			return BadRequest(result.Message);
 		}
 
+		[HttpPost("delete")]
 		public virtual IActionResult Delete(TEntity entity)
 		{
-			throw new NotImplementedException();
+			var result = _entityService.Delete(entity);
+			if (result.Success)
+				return Ok(result);
+			return BadRequest(result.Message);
 		}
-
+		[HttpGet("getAll")]
 		public virtual IActionResult Get()
 		{
-			throw new NotImplementedException();
+			var result = _entityService.GetAll();
+			if (result.Success)
+				return Ok(result.Data);
+			return BadRequest(result.Message);
 		}
-
+		[HttpPost("update")]
 		public virtual IActionResult Update(TEntity entity)
 		{
-			throw new NotImplementedException();
+			var result = _entityService.Update(entity);
+			if (result.Success)
+				return Ok(result);
+			return BadRequest(result.Message);
 		}
 	}
 }
