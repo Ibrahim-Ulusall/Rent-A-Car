@@ -14,6 +14,6 @@ namespace Core.DataAccess.EntityFramework
 		void Delete(TEntity entity);
 		void Update(TEntity entity);
 		List<TEntity> GetAll(Expression<Func<TEntity, bool>> filter = null);
-		TEntity Get(Expression<Func<TEntity, bool>> filter);
+		abstract TEntity Get(Expression<Func<TEntity, bool>> filter);
 	}
 }

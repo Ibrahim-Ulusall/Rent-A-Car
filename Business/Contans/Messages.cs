@@ -31,5 +31,6 @@ namespace Business.Contans
 		public static string GetAllData = "Tümü listelendi!";
 		public static string ListIsEmpty = "Liste boş!";
 		public static string UpdateData = "Güncelleme işlemi başarılı";
+		public static string AddedData = "Ekleme İşlemi Başarılı";
 	}
 }

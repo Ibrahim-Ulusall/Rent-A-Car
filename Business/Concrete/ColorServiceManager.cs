@@ -11,46 +11,27 @@ using System.Threading.Tasks;
 
 namespace Business.Concrete
 {
-	public class ColorServiceManager : IColorService
+	public class ColorServiceManager :ManagerBase<Color,IColorDal> ,IColorService
 	{
-		IColorDal _colorDal;
-        public ColorServiceManager(IColorDal colorDal)
-        {
-            _colorDal = colorDal;
-        }
-        public IResult Add(Color entity)
+        public ColorServiceManager(IColorDal colorDal) : base(colorDal) { }
+        
+		public override IDataResult<Color> Get(Color entity)
 		{
-			var result = _colorDal.Get(color => color.ColorName.ToLower() == entity.ColorName.ToLower());
-			if (result.ColorName.ToLower() == entity.ColorName.ToLower())
-				return new ErrorResult(Messages.GivenValueCurrentError);
-			_colorDal.Insert(entity);
-			return new SuccessResult(Messages.ColorAdded);
+			try
+			{
+				Color existingEntity = _entityDal.Get(color => color.ColorId == entity.ColorId);
+				if (entity == null)
+					return new ErrorDataResult<Color>(Messages.NullEntityError);
+				else if (existingEntity == null)
+					return new ErrorDataResult<Color>(Messages.ExistingEntityError);
+				else
+					return new SuccessDataResult<Color>(existingEntity);
+			}
+			catch (Exception ex)
+			{
+				return new ErrorDataResult<Color>(ex.Message);
+			}
 		}
-
-		public IResult Delete(Color entity)
-		{
-			if (entity.ColorId < 0)
-				return new ErrorResult(Messages.IdValueLessthanZeroError);
-			_colorDal.Delete(entity);
-			return new SuccessResult(Messages.ColorDeleted);
-		}
-
-		public IDataResult<Color> Get(Color entity)
-		{
-			return new SuccessDataResult<Color>(_colorDal.Get(color => color.ColorId == entity.ColorId),Messages.ColorListed);
-		}
-
-		public IDataResult<List<Color>> GetAll()
-		{
-			return new SuccessDataResult<List<Color>>(_colorDal.GetAll(), Messages.ColorListed);
-		}
-
-		public IResult Update(Color entity)
-		{
-			var result = _colorDal.Get(color => color.ColorName.ToLower() == entity.ColorName.ToLower());
-			if (result.ColorName.ToLower() == entity.ColorName.ToLower())
-				return new ErrorResult(Messages.CurrentValueInSystemError);
-			return new SuccessResult(Messages.ColorUpdated);
-		}
+	}
 	}
 }
