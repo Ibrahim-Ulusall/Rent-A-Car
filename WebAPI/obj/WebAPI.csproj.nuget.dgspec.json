@@ -309,6 +309,9 @@
             "projectReferences": {
               "C:\\Users\\incar\\Source\\Repos\\Rent-A-Car-Project\\Business\\Business.csproj": {
                 "projectPath": "C:\\Users\\incar\\Source\\Repos\\Rent-A-Car-Project\\Business\\Business.csproj"
+              },
+              "C:\\Users\\incar\\Source\\Repos\\Rent-A-Car-Project\\Entities\\Entities.csproj": {
+                "projectPath": "C:\\Users\\incar\\Source\\Repos\\Rent-A-Car-Project\\Entities\\Entities.csproj"
               }
             }
           }

@@ -2924,6 +2924,7 @@
   "projectFileDependencyGroups": {
     "net6.0": [
       "Business >= 1.0.0",
+      "Entities >= 1.0.0",
       "Swashbuckle.AspNetCore >= 6.2.3"
     ]
   },
@@ -2963,6 +2964,9 @@
           "projectReferences": {
             "C:\\Users\\incar\\Source\\Repos\\Rent-A-Car-Project\\Business\\Business.csproj": {
               "projectPath": "C:\\Users\\incar\\Source\\Repos\\Rent-A-Car-Project\\Business\\Business.csproj"
+            },
+            "C:\\Users\\incar\\Source\\Repos\\Rent-A-Car-Project\\Entities\\Entities.csproj": {
+              "projectPath": "C:\\Users\\incar\\Source\\Repos\\Rent-A-Car-Project\\Entities\\Entities.csproj"
             }
           }
         }

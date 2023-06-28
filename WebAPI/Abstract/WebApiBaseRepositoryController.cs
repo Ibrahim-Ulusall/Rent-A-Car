@@ -10,7 +10,7 @@ namespace WebAPI.Abstract
 	public abstract class WebApiBaseRepositoryController<TEntity, TEntityService> : ControllerBase, 
 		IWebApiRepositotyBase<TEntity>
 		where TEntity :class,IEntity,new()
-		where TEntityService : class,IBusinessRepository<TEntity>,new()
+		where TEntityService : class,IBusinessRepository<TEntity>
 	{
 		private readonly TEntityService _entityService;
 
