@@ -12,6 +12,6 @@ namespace Business.Abstract
 {
 	public interface IVehicleService:IBusinessRepository<Vehicle>
 	{
-		
+		IDataResult<List<Vehicle>> GetByCategoryId(int id);
 	}
 }

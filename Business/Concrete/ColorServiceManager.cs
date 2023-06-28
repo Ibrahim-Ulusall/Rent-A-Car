@@ -45,15 +45,6 @@ namespace Business.Concrete
 			return new SuccessDataResult<List<Color>>(_colorDal.GetAll(), Messages.ColorListed);
 		}
 
-		//Renkler için Category Id Olmayacak Daha Sonra Bu metot silinecek!
-		public IDataResult<List<Color>> GetByCategoryId(int id)
-		{
-			if (id < 0)
-				return new ErrorDataResult<List<Color>>(Messages.IdValueLessthanZeroError);
-			_colorDal.GetAll(color => color.ColorId == id);
-			return new SuccessDataResult<List<Color>>(Messages.ColorListed);
-		}
-
 		public IResult Update(Color entity)
 		{
 			var result = _colorDal.Get(color => color.ColorName.ToLower() == entity.ColorName.ToLower());
