@@ -15,6 +15,6 @@ namespace Entities.Concrete
         public int ColorId { get; set; }
         public int CategoryId { get; set; }
         public int RateOfEngineId { get; set; }
-        public int CarDetailsId { get; set; }
+        public int CarDetailId { get; set; }
     }
 }

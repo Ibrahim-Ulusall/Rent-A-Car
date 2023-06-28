@@ -11,10 +11,10 @@ using System.Threading.Tasks;
 
 namespace Business.Concrete
 {
-	public class ColorServiceManager :ManagerBase<Color,IColorDal> ,IColorService
+	public class ColorServiceManager : ManagerBase<Color, IColorDal>, IColorService
 	{
-        public ColorServiceManager(IColorDal colorDal) : base(colorDal) { }
-        
+		public ColorServiceManager(IColorDal colorDal) : base(colorDal) { }
+
 		public override IDataResult<Color> Get(Color entity)
 		{
 			try
@@ -33,5 +33,5 @@ namespace Business.Concrete
 			}
 		}
 	}
-	}
 }
+
