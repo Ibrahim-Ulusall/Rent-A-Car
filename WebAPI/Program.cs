@@ -12,8 +12,13 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+
 builder.Services.AddSingleton<IBrandService, BrandServiceManager>();
 builder.Services.AddSingleton<IBrandDal, EfBrandDal>();
+
+builder.Services.AddSingleton<ICityService, CityServiceManager>();
+builder.Services.AddSingleton<ICityDal, EfCityDal>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
