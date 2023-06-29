@@ -12,9 +12,9 @@ using System.Threading.Tasks;
 
 namespace Business.Concrete
 {
-	public class VehicleServiceManager : ManagerBase<Vehicle,IVehicleDal>,IVehicleService
+	public class VehicleServiceManager : ManagerBase<Vehicle, IVehicleDal>, IVehicleService
 	{
-        public VehicleServiceManager(IVehicleDal vehicleDal) : base(vehicleDal) { }
+		public VehicleServiceManager(IVehicleDal vehicleDal) : base(vehicleDal) { }
 
 		public override IDataResult<Vehicle> Get(Vehicle entity)
 		{
@@ -36,7 +36,20 @@ namespace Business.Concrete
 
 		public IDataResult<List<Vehicle>> GetByCategoryId(int id)
 		{
-			throw new NotImplementedException();
+			try
+			{
+				if (id < 0)
+					return new ErrorDataResult<List<Vehicle>>(Messages.IdValueLessthanZeroError);
+				var existingEntity = _entityDal.GetAll(c => c.CategoryId == id);
+				if (existingEntity.Count == 0)
+					return new ErrorDataResult<List<Vehicle>>(Messages.ListIsEmpty);
+				else
+					return new SuccessDataResult<List<Vehicle>>(existingEntity);
+			}
+			catch (Exception ex)
+			{
+				return new ErrorDataResult<List<Vehicle>>(ex.Message);
+			}
 		}
 	}
 }

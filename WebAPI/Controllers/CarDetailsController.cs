@@ -14,5 +14,14 @@ namespace WebAPI.Controllers
         {
             
         }
+
+        [HttpGet("getDetail")]
+        public IActionResult GetCarDetail()
+        {
+            var result = _entityService.carDetails();
+            if (result.Success)
+                return Ok(result.Data);
+            return BadRequest(result.Message);
+        }
     }
 }

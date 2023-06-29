@@ -19,6 +19,9 @@ builder.Services.AddSingleton<IBrandDal, EfBrandDal>();
 
 builder.Services.AddSingleton<ICityService, CityServiceManager>();
 builder.Services.AddSingleton<ICityDal, EfCityDal>();
+
+builder.Services.AddSingleton<ICarDetailService, CarDetailServiceManager>();
+builder.Services.AddSingleton<ICarDetailDal, EfCarDetailsDal>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

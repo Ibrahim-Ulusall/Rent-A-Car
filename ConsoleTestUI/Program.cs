@@ -1,27 +1,13 @@
 ﻿using Business.Concrete;
 using DataAccess.Concrete.EntityFramework;
 using Entities.Concrete;
-VehicleServiceManager serviceManager = new VehicleServiceManager(new EfVehicleDal());
+using Entities.DTOs;
 
-//foreach (var item in serviceManager.GetAll().Data)
-//{
-//	Console.WriteLine(item.CategoryId);
-//}
+CarDetailServiceManager serviceManager = new CarDetailServiceManager(new EfCarDetailsDal());
 
-//var result = serviceManager.Add(new Vehicle { CarId = -1, BrandId = 1, CarDetailId = 1, CategoryId = 1, 
-//	ColorId = 1, ModelId = 1, RateOfEngineId = 1 });
-
-//BrandServiceManager brandService = new BrandServiceManager(new EfBrandDal());
-//foreach (var item in brandService.GetAll().Data)
-//	Console.WriteLine(item.BrandName);
-
-//Console.WriteLine(result.Message);
-
-//CityServiceManager cityService = new CityServiceManager(new EfCityDal());
-//string message = cityService.Add(new City { }).Message;
-//Console.WriteLine(message);
-//foreach (var item in cityService.GetAll().Data)
-//{
-//    Console.WriteLine(item.CityId.ToString() + " " + item.CityName);
-//}
-//Console.Read();
+foreach (var item in serviceManager.carDetails().Data)
+{
+	Console.WriteLine(item.DetailId.ToString() + " " + 
+		item.BrandName + " " + 
+		item.ModelName + " " + item.ColorName);
+}

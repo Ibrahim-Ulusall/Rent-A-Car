@@ -2,7 +2,9 @@
 using Business.Contans;
 using Core.Utilities.Results;
 using DataAccess.Abstract;
+using DataAccess.Concrete.EntityFramework.DatabaseContext;
 using Entities.Concrete;
+using Entities.DTOs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,9 +13,37 @@ using System.Threading.Tasks;
 
 namespace Business.Concrete
 {
-	public class CarDetailServiceManager:ManagerBase<CarDetail,ICarDetailDal> , ICarDetailService
+	public class CarDetailServiceManager : ManagerBase<CarDetail, ICarDetailDal>, ICarDetailService
 	{
-        public CarDetailServiceManager(ICarDetailDal carDetail) : base(carDetail) { }
+		public CarDetailServiceManager(ICarDetailDal carDetail) : base(carDetail) { }
+
+		public IDataResult<List<CarDetailDto>> carDetails()
+		{
+
+			using (EntityFrameworkRentACarDatabaseContext context = new EntityFrameworkRentACarDatabaseContext())
+			{
+				var result = from car in context.Vehicles
+							 join brand in context.Brands
+							 on car.BrandId equals brand.BrandId
+							 join color in context.Colors
+							 on car.ColorId equals color.ColorId
+							 join model in context.Models
+							 on car.ModelId equals model.ModelId
+							 join detail in context.CarDetails
+							 on car.CarDetailId equals detail.CarDetailId
+							 select new CarDetailDto
+							 {
+								 DetailId = detail.CarDetailId,
+								 BrandName = brand.BrandName,
+								 ColorName = color.ColorName,
+								 ModelName = model.ModelName,
+							 };
+				if (result.Count()==0)
+					return new ErrorDataResult<List<CarDetailDto>>(Messages.ListIsEmpty);
+				return new SuccessDataResult<List<CarDetailDto>>(result.ToList());
+			}
+
+		}
 
 		public override IDataResult<CarDetail> Get(CarDetail entity)
 		{

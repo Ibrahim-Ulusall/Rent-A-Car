@@ -12,7 +12,7 @@ namespace WebAPI.Abstract
 		where TEntity :class,IEntity,new()
 		where TEntityService : class,IBusinessRepository<TEntity>
 	{
-		private readonly TEntityService _entityService;
+		public readonly TEntityService _entityService;
 
         public WebApiBaseRepositoryController(TEntityService entityService)
         {
