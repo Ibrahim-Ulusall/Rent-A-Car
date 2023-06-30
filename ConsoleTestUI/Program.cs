@@ -9,5 +9,7 @@ foreach (var item in serviceManager.carDetails().Data)
 {
 	Console.WriteLine(item.DetailId.ToString() + " " + 
 		item.BrandName + " " + 
-		item.ModelName + " " + item.ColorName);
+		item.ModelName + " " + item.ColorName + " " +
+		item.ChassisNumber + " " + item.EnginePower + " " + item.FuelType
+		);
 }

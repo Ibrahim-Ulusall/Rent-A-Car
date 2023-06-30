@@ -31,14 +31,21 @@ namespace Business.Concrete
 							 on car.ModelId equals model.ModelId
 							 join detail in context.CarDetails
 							 on car.CarDetailId equals detail.CarDetailId
+							 join engine in context.RateOfEngines
+							 on car.RateOfEngineId equals engine.EngineId
+							 join fuel in context.FuelTypes
+							 on detail.FuelTypeId equals fuel.FuelTypeId
 							 select new CarDetailDto
 							 {
 								 DetailId = detail.CarDetailId,
 								 BrandName = brand.BrandName,
 								 ColorName = color.ColorName,
 								 ModelName = model.ModelName,
+								 EnginePower = engine.RateofEngine,
+								 ChassisNumber = detail.ChassisNumber,
+								 FuelType = fuel.FuelTypeName
 							 };
-				if (result.Count()==0)
+				if (result.Count() == 0)
 					return new ErrorDataResult<List<CarDetailDto>>(Messages.ListIsEmpty);
 				return new SuccessDataResult<List<CarDetailDto>>(result.ToList());
 			}

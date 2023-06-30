@@ -13,5 +13,8 @@ namespace Entities.DTOs
         public string BrandName { get; set; }
         public string ModelName { get; set; }
         public string ColorName { get; set; }
+        public decimal EnginePower { get; set; }
+        public string ChassisNumber { get; set; }
+        public string FuelType { get; set; }
     }
 }
