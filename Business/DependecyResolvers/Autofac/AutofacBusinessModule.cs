@@ -9,5 +9,6 @@ namespace Business.DependecyResolvers.Autofac
 {
 	public class AutofacBusinessModule:Module
 	{
+		
 	}
 }
