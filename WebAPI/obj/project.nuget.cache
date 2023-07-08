@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "97Fc/G857UP2Z3AyGE+eSDlAxu+mh3HIFC+eAc1RLAD/UBfaRkiVVbG6qdMx1zkO7/nDVmleMB8iCY+1T2+vKA==",
+  "dgSpecHash": "i2aptJ4UWYLxgKvBWM1oK6NGTVgnb4Kf+bOuujwYkE/T6iGOZecj42MdA6sKGS6QiHwbWEPR7EVZHlKiBdzNwg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\incar\\Source\\Repos\\Rent-A-Car-Project\\WebAPI\\WebAPI.csproj",
+  "projectFilePath": "\\\\DESKTOP-2853N3D\\Users\\incar\\Source\\Repos\\Rent-A-Car-Project\\WebAPI\\WebAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\incar\\.nuget\\packages\\autofac\\7.0.1\\autofac.7.0.1.nupkg.sha512",
+    "C:\\Users\\incar\\.nuget\\packages\\autofac.extensions.dependencyinjection\\8.0.0\\autofac.extensions.dependencyinjection.8.0.0.nupkg.sha512",
     "C:\\Users\\incar\\.nuget\\packages\\autofac.extras.dynamicproxy\\7.1.0\\autofac.extras.dynamicproxy.7.1.0.nupkg.sha512",
     "C:\\Users\\incar\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\incar\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",

@@ -1,3 +1,4 @@
+using Autofac.Extensions.DependencyInjection;
 using Business.Abstract;
 using Business.Concrete;
 using DataAccess.Abstract;
@@ -14,14 +15,16 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 
-builder.Services.AddSingleton<IBrandService, BrandServiceManager>();
-builder.Services.AddSingleton<IBrandDal, EfBrandDal>();
+//builder.Services.AddSingleton<IBrandService, BrandServiceManager>();
+//builder.Services.AddSingleton<IBrandDal, EfBrandDal>();
 
-builder.Services.AddSingleton<ICityService, CityServiceManager>();
-builder.Services.AddSingleton<ICityDal, EfCityDal>();
+//builder.Services.AddSingleton<ICityService, CityServiceManager>();
+//builder.Services.AddSingleton<ICityDal, EfCityDal>();
 
-builder.Services.AddSingleton<ICarDetailService, CarDetailServiceManager>();
-builder.Services.AddSingleton<ICarDetailDal, EfCarDetailsDal>();
+//builder.Services.AddSingleton<ICarDetailService, CarDetailServiceManager>();
+//builder.Services.AddSingleton<ICarDetailDal, EfCarDetailsDal>();
+
+builder.Host.UseServiceProviderFactory(new AutofacServiceProviderFactory());
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
